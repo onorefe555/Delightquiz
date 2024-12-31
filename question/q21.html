@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qestion one selected</title>
+    <link rel="stylesheet" href="../style/question.css">
+</head>
+<body>
+    <div>
+        <div>
+           <div id="timer_container-header">
+                  <div>
+                    <h2 id="delight">Prince Delight Jesus Foundation Bible Quiz</h2>
+                    <h2>SEASON 8</h2>
+                  </div>
+                  <div class="timer-container">
+                    <h1 id="myh1">Stopwatch <span id="stopa_watch">⏱</span></h1>
+    
+                    <div id="container">
+                         <div id="display">
+                           00:00:00:00
+                         </div>
+                
+                         <div id="control">
+                             <button id="startBtnn" onclick="start()">Start</button>
+                             <button id="stopBtnn" onclick="Stop()">Stop</button>
+                             <button id="resetBtn" onclick="reset()">reset</button>
+                         </div>
+                    </div>
+                  </div>
+           </div>
+           <!-- question section -->
+            <h1>QUESTION NUMBER 21</h1>
+            <P id="qst"></P>
+           <button id="back">Back</button> <button id="next">Display</button>
+            <button id="clear">Clear</button>
+        </div>
+        <div>
+            <a href="../index.html" class="home">Home</a>
+        </div>
+    </div>
+    <script>
+      const clear = document.getElementById("clear")
+        let question = ["121. Now ye are the ___ of Christ and members in particular.",
+            "122. Which chapter of I Cor talks about charity (love).",
+            "123.  Charity suffered long, and is____",
+            "124.  And now abideth faint, hope, charity, these, three, but the greatest of these is___"
+        ]
+        let index =0;
+        let displayqst;
+        
+        
+        const qst = document.getElementById("qst")
+        const next = document.getElementById("next")
+        const back = document.getElementById("back")
+
+        next.addEventListener("click", ()=>{
+             displayqst = question[index]
+            index++
+          if (index >= question.length+1 ) {
+             return index = 0 
+          }
+          qst.textContent =displayqst
+          next.textContent = "Next ⏭"
+        })
+       
+       back.addEventListener("click", ()=>{
+        index--
+        displayqst = question[index]
+       
+        if (index <= 0 ) {
+             return question.length-1
+          }
+          qst.textContent =displayqst
+          back.textContent = "⏮ Prev"
+       })
+
+        let colorArrays =["cycan","blue","green","red","pink","rgb(196, 60, 11)"]
+function disColour() {
+    let randColors= colorArrays[Math.floor(Math.random()*colorArrays.length)]
+    // document.getElementById("pick").style.color = randColors
+    document.getElementById("delight").style.color = randColors
+}
+setInterval(disColour, 300)
+clear.addEventListener("click", ()=>[
+  qst.textContent=""
+])
+    </script>
+    <script src="../script/watch.js"></script>
+</body>
+</html>

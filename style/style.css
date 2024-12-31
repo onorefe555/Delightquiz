@@ -1,0 +1,64 @@
+body{
+    background-color: #040c18;
+}
+h2{
+    text-align: center;
+    font-size: 35px;
+    color: rgba(0, 0, 255, 0.87);
+    font-weight: 900;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0.7rem;
+    width: 100%;
+}
+.container #img_slideshow{
+    width: 100%;
+    margin: 2rem;
+}
+.container #time{
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 1rem;
+}
+#img_slideshow img{
+    width: 100%;
+    border-radius: 1rem;
+}
+#select_container{
+    width: 100%;
+}
+#select_container h3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#select{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    gap: 1px;
+}
+#select button {
+    padding: 0.6rem;
+    margin-bottom: 0.8rem;
+    background-color: rgba(10, 10, 153, 0.603);
+    color: rgb(196, 60, 11);
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;   
+}
+#select button:hover{
+    background-color: black;
+    font-size:25px ;
+}
+@media screen and (max-width: 1050px) {
+    body{
+        display: none;
+    }
+}
